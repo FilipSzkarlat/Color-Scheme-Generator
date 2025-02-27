@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  height: 90px;
+  gap: 1em;
+  margin: 0 20px;
+}
+
+nav input,
+nav select,
+nav button {
+  height: 40px;
+  border: solid #d1d5db 1px;
+}
+
+nav input {
+  border: none;
+}
+
+nav select {
+  border-radius: 6px;
+  flex-grow: 1;
+}
+
+nav select {
+  padding-left: 1em;
+}
+
+nav button {
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
