@@ -7,10 +7,13 @@
 body {
   max-width: 1000px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 0 auto;
+  min-height: 100vh;
 }
 
+/* NAV */
 nav {
   display: flex;
   width: 100%;
@@ -18,7 +21,8 @@ nav {
   align-items: center;
   height: 90px;
   gap: 1em;
-  margin: 0 20px;
+  padding: 0 20px;
+  border: solid blue 1px;
 }
 
 nav input,
@@ -45,4 +49,19 @@ nav button {
   border-radius: 4px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+/* MAIN */
+main {
+  flex-grow: 1;
+  border: solid red 1px;
+}
+
+/* FOOTER */
+footer {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
