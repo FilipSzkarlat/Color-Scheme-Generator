@@ -22,7 +22,6 @@ nav {
   height: 90px;
   gap: 1em;
   padding: 0 20px;
-  border: solid blue 1px;
 }
 
 nav input,
@@ -34,15 +33,20 @@ nav button {
 
 nav input {
   border: none;
+  cursor: pointer;
+  transition: ease all 0.3s;
+}
+
+nav input:hover,
+nav input:active {
+  transform: scale(1.1);
 }
 
 nav select {
   border-radius: 6px;
   flex-grow: 1;
-}
-
-nav select {
   padding-left: 1em;
+  cursor: pointer;
 }
 
 nav button {
@@ -51,10 +55,25 @@ nav button {
   padding-right: 10px;
 }
 
+button {
+  transition: ease all 0.3s;
+}
+
+button:hover,
+button:active {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 /* MAIN */
 main {
-  flex-grow: 1;
-  border: solid red 1px;
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.color {
+  width: 20%;
 }
 
 /* FOOTER */
