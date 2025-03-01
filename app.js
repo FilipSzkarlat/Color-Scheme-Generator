@@ -27,12 +27,46 @@ function getSchemes() {
       data.colors.forEach((color) => {
         document.getElementById(`color${i}`).style.backgroundColor =
           color.hex.value;
+        document
+          .getElementById(`color${i}`)
+          .setAttribute("data-hex", color.hex.value);
         document.getElementById(`color${i}-name`).textContent = color.hex.value;
         i++;
       });
     });
 }
 
+getSchemes();
 const getColorSchemeBtn = document.querySelector("button");
 
 getColorSchemeBtn.addEventListener("click", getSchemes);
+
+// copy the color to the clipboard by clicking on the color
+const mainElement = document.querySelector("main");
+mainElement.addEventListener("click", (e) => {
+  if (e.target.classList.contains("color")) {
+    const colorValue = e.target.getAttribute("data-hex");
+    navigator.clipboard.writeText(colorValue);
+    copiedInfo();
+  }
+});
+
+// copy the color to the clipboard by clicking on the color name
+const footerElement = document.querySelector("footer");
+footerElement.addEventListener("click", (e) => {
+  if (e.target.classList.contains("color-name")) {
+    const colorValue = e.target.textContent;
+    navigator.clipboard.writeText(colorValue);
+    copiedInfo();
+  }
+});
+
+// showing the copied info
+const copiedText = document.querySelector(".copied-text");
+function copiedInfo() {
+  copiedText.classList.add("show");
+
+  setTimeout(() => {
+    copiedText.classList.remove("show");
+  }, 1500);
+}
